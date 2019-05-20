@@ -1,0 +1,1 @@
+{"id":4,"orgId":1,"name":"USER_SESSIONS","type":"elasticsearch","typeLogoUrl":"public/app/plugins/datasource/elasticsearch/img/elasticsearch.svg","access":"direct","url":"http://class16.encore.com:9200","password":"","user":"","database":"user_sessions-*","basicAuth":false,"isDefault":false,"jsonData":{"esVersion":60,"keepCookies":[],"timeField":"EVENT_TS"},"readOnly":false}

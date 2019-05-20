@@ -1,0 +1,153 @@
+{
+	"namespace": "zigzag_data",
+	"name": "zigzag_data_events",
+	"type": "record",
+	"fields": [
+        {
+            "name": "ip", 
+            "type": {
+                "session" : "true",
+                "type": "string",
+                "arg.properties": {
+                    "options": [
+                        "111.152.45.45",
+                        "111.203.236.146",
+                        "111.168.57.122",
+                        "111.249.79.93",
+                        "111.168.57.122",
+                        "111.90.225.227",
+                        "111.173.165.103",
+                        "111.145.8.144",
+                        "111.245.174.248",
+                        "111.245.174.111",
+    
+                        "222.152.45.45",
+                        "222.203.236.146",
+                        "222.168.57.122",
+                        "222.249.79.93",
+                        "222.168.57.122",
+                        "222.90.225.227",
+                        "222.173.165.103",
+                        "222.145.8.144",
+                        "222.245.174.248",
+                        "222.245.174.222",
+    
+                        "122.152.45.245",
+                        "122.203.236.246",
+                        "122.168.57.222",
+                        "122.249.79.233",
+                        "122.168.57.222",
+                        "122.90.225.227",
+                        "122.173.165.203",
+                        "122.145.8.244",
+                        "122.245.174.248",
+                        "122.245.174.122",
+    
+                        "233.152.245.45",
+                        "233.203.236.146",
+                        "233.168.257.122",
+                        "233.249.279.93",
+                        "233.168.257.122",
+                        "233.90.225.227",
+                        "233.173.215.103",
+                        "233.145.28.144",
+                        "233.245.174.248",
+                        "233.245.174.233"
+                    ]
+                }
+            }
+        },
+ 
+        {
+            "name": "user_id", 
+            "type": {
+                "type": "int",
+                "session-sibling-int-hash" : "true",
+                "arg.properties": {
+                    "range": {
+                        "min": -1,
+                        "max": 40
+                    }
+                }
+            }
+		},
+
+        {
+			"name": "event_origin",
+			"type": {
+				"type": "string",
+				"arg.properties": {
+					"options": [
+						"goods_search_result",
+						"shops_ranking",
+						"shops_bookmark",
+						"category_search_result",
+						"my_goods"
+					]
+				}
+			}
+		},        
+ 
+        {
+			"name": "event_name",
+			"type": {
+				"type": "string",
+				"arg.properties": {
+					"options": [
+						"app_page_view",
+						"enter_browser",
+						"remove_my_goods",
+						"add_my_goods",
+						"add_bookmark",
+						"remove_bookmark"
+					]
+				}
+			}
+		},
+
+		{
+			"name": "search_keyword",
+			"type": {
+				"type": "string",
+				"arg.properties": {
+					"options": [
+						"로브",
+						"브라운",
+						"샤스커트",
+						"롱치마",
+						"쉬폰",
+						"펌프스",
+						"여름원피스",
+						"상의",
+						"슬랙스",
+						"스티치",
+						"린넨",
+						"7부"
+					]
+				}
+            }
+        },        
+
+		{
+			"name": "shop_id",
+			"type": {
+				"type": "string",
+				"arg.properties": {
+					"options": [
+                        "Edna",
+                        "Pam",
+                        "Carolyn",
+                        "Joan",
+                        "Florene",
+                        "Ashley",
+                        "Sharilyn",
+                        "Kelli",
+                        "Marth",
+                        "Alexandra"
+                    ]
+				}
+			}
+		}
+        
+    ]
+}

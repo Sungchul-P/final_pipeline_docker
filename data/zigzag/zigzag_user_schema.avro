@@ -1,0 +1,110 @@
+{
+	"namespace": "zigzag_data",
+	"name": "zigzag_data_users",
+	"type": "record",
+	"fields": [
+ 
+        {
+            "name": "userid", 
+            "type": {
+                "type": "int",
+                "arg.properties": {
+                    "iteration": {
+                        "start": 1
+                    }
+                }
+            }
+		},
+        
+        {
+            "name": "user_name", 
+            "type": {
+                "type": "string",
+                "arg.properties": {
+                    "options": [
+                        "akatz1022",
+                        "bobk_43",
+                        "alison_99",
+                        "k_robertz_88",
+                        "Ferd88",
+                        "Reeva43",
+                        "Antonio_0966",
+                        "ArlyneW8ter",
+                        "DimitriSchenz88",
+                        "Oriana_70",
+                        "AbdelKable_86",
+                        "Roberto_123",
+                        "AlanGreta_GG66",
+                        "Nathan_126",
+                        "AndySims_345324",
+                        "GlenAlan_23344",
+                        "LukeWaters_23",
+                        "BenSteins_235"
+                    ]
+                }
+            }
+		},
+
+		{
+			"name": "os",
+			"type": {
+				"type": "string",
+				"arg.properties": {
+					"options": [
+						"Android",
+						"iOS"
+					]
+				}
+			}
+		},
+        
+		{
+			"name": "age",
+			"type": {
+				"type": "int",
+				"arg.properties": {
+					"range": {
+                        "min": 15,
+                        "max": 45
+                    }
+				}
+			}
+		},
+        
+		{
+			"name": "price",
+			"type": {
+				"type": "int",
+				"arg.properties": {
+					"range": {
+                        "min": 2500,
+                        "max": 55000
+                    }
+				}
+			}
+		},
+        
+		{
+			"name": "category",
+			"type": {
+				"type": "string",
+				"arg.properties": {
+					"options": [
+						"상의",
+						"악세사리",
+						"란제리&파자마",
+						"스커트",
+						"바지",
+						"패션소품",
+						"슈즈",
+						"원피스",
+						"아우터",
+						"가방",
+						"비치웨어",
+						"피트니스"
+					]
+				}
+            }
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+{"id":2,"orgId":1,"name":"SEARCH_LIST","type":"elasticsearch","typeLogoUrl":"public/app/plugins/datasource/elasticsearch/img/elasticsearch.svg","access":"direct","url":"http://class16.encore.com:9200","password":"","user":"","database":"search_list-*","basicAuth":false,"isDefault":false,"jsonData":{"esVersion":60,"keepCookies":[],"timeField":"EVENT_TS"},"readOnly":false}
