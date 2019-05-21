@@ -1,14 +1,12 @@
 
 # Download
----
 
-- HI 플랫폼 환경구축에 필요한 파일들은 GitHub에서 Clone으로 가져오셔서 준비를 하시면 됩니다.[https://github.com/Sungchul-P/streamdata_pipeline.git](https://github.com/Sungchul-P/streamdata_pipeline.git)
+- HI 플랫폼 환경구축에 필요한 파일들은 GitHub에서 Clone으로 가져오셔서 준비를 하시면 됩니다.
 
 > git clone https://github.com/Sungchul-P/final_pipeline_docker.git
 
 
-## Step One Container 환경 구축
----
+## [Step One] Container 환경 구축
 
 - 다운로드하신 HI 플랫폼의 파일 Tree구조입니다.
 
@@ -91,21 +89,7 @@ zookeeper-2       /etc/confluent/docker/run        Up      0.0.0.0:22181->2181/t
 zookeeper-3       /etc/confluent/docker/run        Up      0.0.0.0:32181->2181/tcp, 2888/tcp, 3888/tcp
 ```
 
-## Step Two 각각의 데이터 셋 Datagenerate
----
-
-- 다운로드한 데이터셋 파일을 **`datagen`** Container로 cp를 하여, Generate를 진행합니다.
-  [**`*.avro`**, **`*.sql`**]
-
-> docker cp kmong_schema.avro datagen:/tmp/data/kmong/kmong_schema.avro
-> docker cp nc_schema.avro datagen:/tmp/data/nc/nc_schema.avro
-> docker cp zigzag_schema.avro datagen:/tmp/data/zigzag/zigzag_schema.avro
-> docker cp zigzag_user_schema.avro datagen:/tmp/data/zigzag/zigzag_user_schema.avro
->
-> docker cp kmong-schema.sql datagen:/tmp/data/kmong/kmong-schema.sql
-> docker cp nc_schema.sql datagen:/tmp/data/nc/nc_schema.sql
-> docker cp zigzag_schema.sql datagen:/tmp/data/zigzag/zigzag_schema.sql
-
+## [Step Two] 데이터 셋 Datagenerate
 
 - 각각의 터미널에서 명령어를 수행하면, Data가 Generate됩니다.
 ```
@@ -150,30 +134,28 @@ zookeeper-3       /etc/confluent/docker/run        Up      0.0.0.0:32181->2181/t
 ```
 
 
-## Step Three KSQL Schema 생성
----
+## [Step Three] KSQL Schema 생성
 
 
-- 다른 터미널에서 KSQL 실행하여, Stream과 Table을 생성합니다.
+- KSQL CLI에서 KSQL 서버를 실행합니다.
 
 > docker-compose exec ksql-cli ksql http://ksql-server:8088
 
 
-- Script를 통해 손쉽게 Stream,Table을 생성하실 수 있습니다.
+- KSQL CLI 환경에서 스크립트를 사용해 손쉽게 Stream,Table을 생성하실 수 있습니다.
 
 > RUN SCRIPT '/tmp/data/kmong/kmong-schema.sql';
 > RUN SCRIPT '/tmp/data/zigzag/zigzag_schema.sql';
 > RUN SCRIPT '/tmp/data/nc/nc_schema.sql';
 
 
-## Step Four Nifi
----
+## [Step Four] Nifi
+
 
 - Nifi 접속 주소(http://localhost:8080)를 통해 접속 가능합니다.
 - `nifi_template` 디렉터리의 **`Kmong_Stream_v0.2.xml`**, **`NC_Stream_v0.1.xml`**, **`Zigzag_Stream_v0.1.xml`** 파일을 업로드하고 실행을 하면 됩니다.
 
 
-## Step Five Grafana
----
+## [Step Five] Grafana
 
 - Grafana 접속주소(http://localhost:23000)를 통해 접속 가능합니다.
