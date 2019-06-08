@@ -144,9 +144,9 @@ zookeeper-3       /etc/confluent/docker/run        Up      0.0.0.0:32181->2181/t
 
 - KSQL CLI 환경에서 스크립트를 사용해 손쉽게 Stream,Table을 생성하실 수 있습니다.
 
-> RUN SCRIPT '/tmp/data/kmong/kmong-schema.sql';
-> RUN SCRIPT '/tmp/data/zigzag/zigzag_schema.sql';
-> RUN SCRIPT '/tmp/data/nc/nc_schema.sql';
+> RUN SCRIPT '/tmp/data/kmong/kmong-schema.sql';  
+> RUN SCRIPT '/tmp/data/zigzag/zigzag_schema.sql';  
+> RUN SCRIPT '/tmp/data/nc/nc_schema.sql';  
 
 
 ## [Step Four] Nifi
@@ -159,3 +159,5 @@ zookeeper-3       /etc/confluent/docker/run        Up      0.0.0.0:32181->2181/t
 ## [Step Five] Grafana
 
 - Grafana 접속주소(http://localhost:23000)를 통해 접속 가능합니다.
+- 엘라스틱서치를 데이터소스로 추가하고 인덱스별로 연결합니다.
+- 대시보드 예제는 grafana_dashboard를 참고하시면 됩니다.
